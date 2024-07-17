@@ -1,6 +1,7 @@
  body {
     font-family: Arial, Montserrat;
     margin: 0;
+    background-color: #f3f7fe;
 
   }
   
@@ -34,7 +35,7 @@
   } */
 
   /* COMPANY PROFILE */
-  
+
   .company-profile {
     padding: 20px;
     margin: 0 auto;

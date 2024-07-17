@@ -3,7 +3,7 @@ export const companyMapping: { [key: string]: string } = {
   Google: 'GOOGL',
   Microsoft: 'MSFT',
   Amazon: 'AMZN',
-  Facebook: 'FB',
   Tesla: 'TSLA',
   Netflix: 'NFLX',
+  PayPal: 'PYPL',
 };

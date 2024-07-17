@@ -25,17 +25,17 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({ symbol }) => {
   }, [symbol]);
 
   return (
-    <div>
-      {error && <p>{error}</p>}
+    <div className="company-profile">
+      {error && <p className="error-message">{error}</p>}
       {profile ? (
-        <div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-            {profile.logo && <img src={profile.logo} alt={`${profile.name} logo`} style={{ width: '50px', height: 'auto', marginRight: '10px' }} />}
+        <div className="company-profile-content">
+          <div className='company-profile-container'>
+            {profile.logo && <img src={profile.logo} alt={`${profile.name} logo`} className='company-profile-logo' />}
             <h2>{profile.name} ({profile.ticker})</h2>
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p className="loading-message">Loading...</p>
       )}
     </div>
   );

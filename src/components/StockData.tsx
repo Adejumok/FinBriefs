@@ -28,12 +28,22 @@ const StockData: React.FC<StockDataProps> = ({ symbol }) => {
       {error && <p>{error}</p>}
       {stockData ? (
         <div>
-          <h2>Stock Data for {symbol}</h2>
-          <p>Current Price: ${stockData.currentPrice.toFixed(2)}</p>
-          <p>High: ${stockData.high.toFixed(2)}</p>
-          <p>Low: ${stockData.low.toFixed(2)}</p>
-          <p>Open: ${stockData.open.toFixed(2)}</p>
+        <h2>Stock Data for {symbol}</h2>
+        <div className="stock-data-container">
+          <div className="stock-data-item current-price">
+            <p>Current Price: ${stockData.currentPrice.toFixed(2)}</p>
+          </div>
+          <div className="stock-data-item high-price">
+            <p>High: ${stockData.high.toFixed(2)}</p>
+          </div>
+          <div className="stock-data-item low-price">
+            <p>Low: ${stockData.low.toFixed(2)}</p>
+          </div>
+          <div className="stock-data-item open-price">
+            <p>Open: ${stockData.open.toFixed(2)}</p>
+          </div>
         </div>
+      </div>
       ) : (
         <p>Loading stock data...</p>
       )}

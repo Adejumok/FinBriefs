@@ -3,6 +3,14 @@ import axios from 'axios';
 const API_KEY = import.meta.env.VITE_FINNHUB_API_KEY as string;
 const BASE_URL = 'https://finnhub.io/api/v1/';
 
+export interface IStockData {
+  currentPrice: number;
+  high: number;
+  low: number;
+  open: number;
+  previousClose: number;
+}
+
 export interface ICompanyProfile {
   name: string;
   ticker: string;
@@ -17,6 +25,17 @@ export interface ICompanyNews {
   image: string;
 }
 
+export const fetchStockData = async (symbol: string): Promise<IStockData> => {
+  const response = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`);
+  const data = response.data;
+  return {
+    currentPrice: data.c,
+    high: data.h,
+    low: data.l,
+    open: data.o,
+    previousClose: data.pc
+  };
+};
 
 export const fetchCompanyProfile = async (symbol: string): Promise<ICompanyProfile> => {
   try {
